@@ -1,4 +1,4 @@
-# DOMOTICA-ARDUINO-X10
+# DOMÓTICA-ARDUINO-X10
 Proyectos de domótica con Arduino y X10.
 
 1º.- DomoVozPuerta. Control de salidas Arduino (tarjetas de relés, leds, etc.) mediante módulo bluetooth.
