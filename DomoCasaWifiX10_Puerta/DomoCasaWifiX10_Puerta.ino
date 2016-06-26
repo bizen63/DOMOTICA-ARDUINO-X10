@@ -106,6 +106,8 @@ digitalWrite(PIN_LED3,LOW);
 apagar_A4(); //Apagar horno 
 state3="OFF";
 }
+
+
 int TODO = readString.indexOf("TODO=");
 if(readString.substring(TODO,TODO+6)=="TODO=T") {
 encender_todo(); //Encender todo
@@ -114,7 +116,6 @@ state1="ON";
 state2="ON";
 state3="ON"; }
 else if (readString.substring(TODO,TODO+6)=="TODO=F") {
-digitalWrite(PIN_LED3,LOW);
 apagar_todo(); 
 state0="OFF";
 state1="OFF";
@@ -123,11 +124,11 @@ state3="OFF";
 }
 
 int DOOR = readString.indexOf("DOOR=");
-if(readString.substring(TODO,TODO+6)=="DOOR=T") {
+if(readString.substring(DOOR,DOOR+6)=="DOOR=T") {
 AbrePuerta(); //ABRIR PUERTA
 state4="ABIERTA";
 }
-else if (readString.substring(TODO,TODO+6)=="DOOR=F") {
+else if (readString.substring(DOOR,DOOR+6)=="DOOR=F") {
 CierraPuerta(); //CERRAR PUERTA
 state4="CERRADA";
 }
@@ -181,14 +182,14 @@ cliente.println("<input type=submit value=ON style=width:200px;height:75px onCli
 cliente.println("<input type=submit value=OFF style=width:200px;height:75px onClick=location.href='./?LED3=F\'>"); 
 cliente.println("</center>"); 
 
-
+cliente.println("<center>"); 
 cliente.println("<h1>ESTADO PUERTA ABIERTA/CERRADA</h1>");
 cliente.print("<br><br>"); 
 cliente.print("Estado de la PUERTA: "); 
 cliente.print(state4); 
 cliente.print("<br><br><br><br>"); 
-cliente.println("<input type=submit value=ON style=width:200px;height:75px onClick=location.href='./?DOOR=T\'>"); 
-cliente.println("<input type=submit value=OFF style=width:200px;height:75px onClick=location.href='./?DOOR=F\'>"); 
+cliente.println("<input type=submit value=ABRIR style=width:200px;height:75px onClick=location.href='./?DOOR=T\'>"); 
+cliente.println("<input type=submit value=CERRAR style=width:200px;height:75px onClick=location.href='./?DOOR=F\'>"); 
 cliente.println("</center>"); 
 
 
