@@ -17,3 +17,5 @@ Proyectos de domótica con Arduino y X10.
 
 
 En las carpetas de los proyectos se incluyen las aplicaciones Android en formato aia, para poder modificarlas con AppInventor, y los esquemas de para obtener el circuito impreso de los Shields wifi y bluetooth.
+
+En la carpeta raíz está la librería que debéis importar para el manejo de sistemas X10.
